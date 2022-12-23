@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MPlayer Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <img onclick="window.open('https://www.github.com/wenzi7777/MPlayer')" alt="logo" class="mplayerImage" src="./assets/logo.png" />
+    <h1 data-fill="welcome-to-mplayer-online-demo"></h1>
+    <div class="languageButtonGroup">
+        <button data-lang="zh_CN">简体中文</button>
+        <button data-lang="zh_TW">正體字</button>
+        <button data-lang="en_US">English</button>
+    </div>
+</header>
+<body>
+<div class="options">
+    <h2 class="title" data-fill="edit-options"></h2>
+    <div class="wrapper">
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="lang(language)"></h3>
+            <div class="contents">
+                <input type="radio" id="lang_zh_CN" name="language" value="zh_CN" />
+                <label for="lang_zh_CN">zh_CN</label>
+                <input type="radio" id="lang_zh_TW" name="language" value="zh_TW" />
+                <label for="lang_zh_TW">zh_TW</label>
+                <input type="radio" id="lang_en_US" name="language" value="en_US" />
+                <label for="lang_en_US">en_US</label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="playerMode(player-mode)"></h3>
+            <div class="contents">
+                <input type="radio" id="playerMode_normal" name="playerMode" value="normal" />
+                <label for="playerMode_normal">normal</label>
+                <input type="radio" id="playerMode_live" disabled name="playerMode" value="live" />
+                <label for="playerMode_live">live</label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="autoplay(autoplay)"></h3>
+            <div class="contents">
+                <input type="radio" id="autoplay_true" name="autoplay" value="true" />
+                <label for="autoplay_true">true</label>
+                <input type="radio" id="autoplay_false" name="autoplay" value="false" />
+                <label for="autoplay_false">false</label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="hints(hints)"></h3>
+            <div class="contents">
+                <input type="radio" id="hints_disabled" name="hints" value="disabled" />
+                <label for="hints_disabled">disabled</label>
+                <input type="radio" id="hints_enabled" name="hints" value="enabled" />
+                <label for="hints_enabled">enabled</label>
+                <textarea id="hints_input" placeholder="Please type in your hint config object here if you want to enable hints"></textarea>
+                <label for="hints_input"></label>
+                <button id="hints_button" data-fill="inject-template-code"></button>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="spotlight(spotlight-effect)"></h3>
+            <div class="contents">
+                <input type="radio" id="spotlight_disabled" name="spotlight" value="disabled" />
+                <label for="spotlight_disabled">disabled</label>
+                <input type="radio" id="spotlight_enabled" name="spotlight" value="enabled" />
+                <label for="spotlight_enabled">enabled</label>
+                <textarea id="spotlight_input" placeholder="Please type in your spotlight config object here if you want to enable spotlight"></textarea>
+                <label for="spotlight_input"></label>
+                <button id="spotlight_button" data-fill="inject-template-code"></button>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="theme(main-color)"></h3>
+            <div class="contents">
+                <input type="text" id="theme" name="theme" placeholder="Hex color" />
+                <label for="theme" data-fill="main-color"></label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="tools(control-tools)"></h3>
+            <div class="contents">
+                <input value="timeline" type="checkbox" id="tools_timeline" name="tools" />
+                <label for="tools_timeline">timeline</label>
+                <input value="playPause" type="checkbox" id="tools_playPause" name="tools" />
+                <label for="tools_playPause">playPause</label>
+                <input value="volumeControl" type="checkbox" id="tools_volumeControl" name="tools" />
+                <label for="tools_volumeControl">volumeControl</label>
+                <input value="durationViewer" type="checkbox" id="tools_durationViewer" name="tools" />
+                <label for="tools_durationViewer">durationViewer</label>
+                <input value="screenshot" type="checkbox" id="tools_screenshot" name="tools" />
+                <label for="tools_screenshot">screenshot</label>
+                <input value="playerSettings" type="checkbox" id="tools_playerSettings" name="tools" />
+                <label for="tools_playerSettings">playerSettings</label>
+                <input value="enablePlaylist" type="checkbox" id="tools_enablePlaylist" name="tools" />
+                <label for="tools_enablePlaylist">enablePlaylist</label>
+                <input value="subtitles" type="checkbox" id="tools_subtitles" name="tools" />
+                <label for="tools_subtitles">subtitles</label>
+                <input value="miniPlayer" type="checkbox" id="tools_miniPlayer" name="tools" />
+                <label for="tools_miniPlayer">miniPlayer</label>
+                <input value="theaterMode" type="checkbox" id="tools_theaterMode" name="tools" />
+                <label for="tools_theaterMode">theaterMode</label>
+                <input value="fullscreen" type="checkbox" id="tools_fullscreen" name="tools" />
+                <label for="tools_fullscreen">fullscreen</label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="hotkey(hotkey)"></h3>
+            <div class="contents">
+                <input type="radio" id="hotkey_true" name="hotkey" value="true" />
+                <label for="hotkey_true">true</label>
+                <input type="radio" id="hotkey_false" name="hotkey" value="false" />
+                <label for="hotkey_false">false</label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="volume(volume)"></h3>
+            <div class="contents">
+                <input type="text" id="volume" name="volume" placeholder="default volume" />
+                <label for="volume" data-fill="default-volume"></label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="playbackRates(playback-rates)"></h3>
+            <div class="contents">
+                <input type="text" id="playbackRates" name="playbackRates" placeholder="such as [.25, .5, 1]" />
+                <label for="playbackRates" data-fill="playback-rates"></label>
+                <button id="playbackRates_button" data-fill="use-default-playback-rates"></button>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="index(index-of-the-default-video)"></h3>
+            <div class="contents">
+                <input type="text" id="index" name="index" placeholder="default index" />
+                <label for="index" data-fill="default-index"></label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="infoPanel(info-panel-items)"></h3>
+            <div class="contents">
+                <input value="basicVideoInfo" type="checkbox" id="infoPanel_basicVideoInfo" name="infoPanel" />
+                <label for="infoPanel_basicVideoInfo">basicVideoInfo</label>
+                <input value="playerFPS" type="checkbox" id="infoPanel_playerFPS" name="infoPanel" />
+                <label for="infoPanel_playerFPS">playerFPS</label>
+                <input value="videoURL" type="checkbox" id="infoPanel_videoURL" name="infoPanel" />
+                <label for="infoPanel_videoURL">videoURL</label>
+                <input value="connectionStatus" type="checkbox" id="infoPanel_connectionStatus" name="infoPanel" />
+                <label for="infoPanel_connectionStatus">connectionStatus</label>
+                <input value="date" type="checkbox" id="infoPanel_date" name="infoPanel" />
+                <label for="infoPanel_date">date</label>
+                <input value="playerInfo" type="checkbox" id="infoPanel_playerInfo" name="infoPanel" />
+                <label for="infoPanel_playerInfo">playerInfo</label>
+            </div>
+        </div>
+        <div class="detailOptionsWrapper">
+            <h3 class="title" data-fill="contextMenu(context-menu)"></h3>
+            <div class="contents">
+                <textarea id="contextMenu_input" placeholder="Please follow the template code to add your own menu item"></textarea>
+                <label for="contextMenu_input"></label>
+                <button id="contextMenu_button" data-fill="reset-template-code"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mplayerWrapper">
+    <div class="beforeLoad">
+        <button class="mplayerWrapperButton" onclick="loadDemo()" data-fill="load-demo-using-this-configs"></button>
+        <button class="mplayerWrapperButton" onclick="loadDefaultDemo()" data-fill="load-default-demo"></button>
+    </div>
+    <div id="mplayer"></div>
+    <div class="afterLoad hide">
+        <button class="mplayerWrapperButton" onclick="destroyDemo()" data-fill="destroy-demo"></button>
+        <button class="mplayerWrapperButton" onclick="copyOptions()" data-fill="copy-options"></button>
+    </div>
+</div>
+</body>
+<footer>
+    2022 MPlayer, made by <a href="https://www.github.com/wenzi7777">NickHsu</a> with love.<br/> licensed under
+    MPL-2.0<br/><a href="https://www.github.com/wenzi7777/MPlayer" data-fill="view-project-in-github"></a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+<script src="https://cdn.jsdelivr.net/npm/flv.js@1.6.2/dist/flv.min.js"></script>
+<script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js"></script>
+<script lang="application/javascript" src="./js/translations.js"></script>
+<script lang="application/javascript" src="index.js"></script>
+</html>
