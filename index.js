@@ -180,7 +180,7 @@ const loadDemo = () => {
     // volume
     let volumeInput = document.querySelector('#volume')
     options.volume = parseFloat(volumeInput.value)
-    if (!options.volume) {
+    if (!options.volume && options.volume !== 0) {
         options.volume = 1
     }
 
